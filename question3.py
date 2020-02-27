@@ -24,6 +24,14 @@ class Transportation(metaclass = abc.ABCMeta):
       """Abstract method; derived classes must override"""
       raise NotImplementedError
    
+class Walk(Transportation):
+   def __init__(self, start_place = "", end_place = "", distance = 0):
+      super().__init__(start_place, end_place, distance)
+   def find_cost(self):
+      cost = super().get_distance() * 0
+##        print ("From " + super().get_start_place() + " to " + super().get_end_place() + ", it will cost " + str(cost) + " Baht by walking")
+      return cost
+
 # main program
 
 travel_cost = 0
